@@ -1,6 +1,8 @@
 package cn.demon.util;
 
 import java.awt.Frame;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -44,5 +46,23 @@ public class MyFrame extends Frame{
 			}
 		}
 	}
+
+	private Image iBuffer;
+	private Graphics gBuffer;
+	
+	@Override
+	public void update(Graphics g){  //÷ÿ‘ÿupdate£¨Ω¯––À´ª∫≥Â“‘∑¿÷π…¡À∏
+		if(iBuffer==null){  
+	        iBuffer=createImage(this.getSize().width,this.getSize().height);  
+	        gBuffer=iBuffer.getGraphics();  
+	    }  
+	    gBuffer.setColor(getBackground());  
+	    gBuffer.fillRect(0,0,this.getSize().width,this.getSize().height);  
+	    
+	    paint(gBuffer);
+	    
+	    g.drawImage(iBuffer, 0, 0, null);
+	}  
+	
 	
 }

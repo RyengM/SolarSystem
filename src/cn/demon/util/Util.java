@@ -1,5 +1,7 @@
 package cn.demon.util;
 
+import java.awt.Frame;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
@@ -13,7 +15,7 @@ public class Util {
 	
 	private Util(){};
 	
-	public static Image getImg (String path){
+	public static Image getImg (String path){//º”‘ÿÕº∆¨
 		URL u = Util.class.getClassLoader().getResource(path);
 		BufferedImage img = null;
 		try {
@@ -24,11 +26,11 @@ public class Util {
 		return img;
 	}
 	
-	public static Image getImage (String path){
+	public static Image getImage (String path){//º”‘ÿgif
 		return Toolkit.getDefaultToolkit().getImage(MyFrame.class.getClassLoader().getResource(path));
 	}
 	
-	public void changeImgSize (Image img,int a){//Õº∆¨≤√ºÙ
+	public void changeImgSize (Image img,int a){//Õº∆¨Àı∑≈
 		Image image = img;
 		BufferedImage tag;
 		int height = img.getHeight(null);
@@ -36,4 +38,8 @@ public class Util {
 		tag = new BufferedImage(width/a, height/a, BufferedImage.TYPE_INT_BGR);
 		tag.getGraphics().drawImage(image, 0, 0, width/a, height/a, null);
 	}
+	
+	
+
 }
+

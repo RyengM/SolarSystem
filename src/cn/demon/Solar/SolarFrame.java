@@ -3,6 +3,7 @@ package cn.demon.Solar;
 import java.awt.Graphics;
 import java.awt.Image;
 
+import cn.demon.util.Constant;
 import cn.demon.util.MyFrame;
 import cn.demon.util.Util;
 
@@ -12,8 +13,8 @@ import cn.demon.util.Util;
 public class SolarFrame extends MyFrame{
 	
 	Image bg = Util.getImg("img/background.jpg");
-	Star sun = new Star("img/sun.gif",0,0);
-	Planet earth = new Planet(sun, "", 100, 100, 0.1);
+	Star sun = new Star("img/sun_.gif",Constant.Width/2-20,Constant.Length/2-20);
+	Planet earth = new Planet(sun, "img/mercury.png", 150, 100, 0.1);
 	
 	
 	public void paint(Graphics g){

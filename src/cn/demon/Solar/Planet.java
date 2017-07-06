@@ -1,5 +1,6 @@
 package cn.demon.Solar;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 
@@ -13,20 +14,39 @@ public class Planet extends Star{
 	double degree;
 	Star center;
 	
-	//—ÿ◊≈Õ÷‘≤πÏº£∑…––
+	
 	public void draw(Graphics g){
-		g.drawImage(img, (int)x, (int)y, null);
-		x = center.x + speed* Math.cos(degree);
-		y = center.y + speed* Math.sin(degree);
+		super.draw(g);
+		//drawTrace(g);
+		move();
+	}
+	
+	public void drawTrace(Graphics g){
+		double ovalx,ovaly,ovalwidth,ovalheight;
+		ovalwidth = longAxis *2;
+		ovalheight = shortAxis *2;
+		ovalx = center.x + center.width/2 - longAxis;
+		ovaly = center.y + center.height/2 - shortAxis;
+		
+		Color c = g.getColor();
+		g.setColor(Color.white);
+		g.drawOval((int)ovalx, (int)ovaly, (int)ovalwidth, (int)ovalheight);
+		g.setColor(c);
+	}
+	
+	public void move(){
+		//—ÿ◊≈Õ÷‘≤πÏº£∑…––
+		x = center.x + center.width/2 + longAxis* Math.cos(degree);
+		y = center.y + center.height/2 + shortAxis* Math.sin(degree);
 		degree += speed;
 	}
 	
 	public Planet(Star center,String imgPath, double longAxis,
 			double shortAxis, double speed) {
+		super(Util.getImage(imgPath));
 		this.center = center;
 		this.x = center.x + longAxis;
 		this.y = center.y;
-		this.img = Util.getImage(imgPath);
 		this.longAxis = longAxis;
 		this.shortAxis = shortAxis;
 		this.speed = speed;
