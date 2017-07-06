@@ -11,11 +11,13 @@ import cn.demon.util.Util;
  */
 public class SolarFrame extends MyFrame{
 	
-	Image bg = Util.getImage("");
-	Star sun = new Star("img/light.png",0,0);
+	Image bg = Util.getImg("img/background.jpg");
+	Star sun = new Star("img/sun.gif",0,0);
 	Planet earth = new Planet(sun, "", 100, 100, 0.1);
 	
+	
 	public void paint(Graphics g){
+		
 		g.drawImage(bg, 0, 0, null);
 		sun.draw(g);
 		earth.draw(g);

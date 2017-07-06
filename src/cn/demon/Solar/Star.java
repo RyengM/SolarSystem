@@ -15,6 +15,12 @@ public class Star {
 	
 	public Star(){};
 	
+	public Star(Image img){
+		this.img = img;
+		img.getWidth(null);
+		img.getHeight(null);
+	}
+	
 	public Star(Image img,double x,double y){
 		this.img = img;
 		this.x = x;
