@@ -13,7 +13,7 @@ public class Planet extends Star{
 	double speed;
 	double degree;
 	Star center;
-	
+	Image img;
 	
 	public void draw(Graphics g){
 		super.draw(g);
@@ -36,8 +36,8 @@ public class Planet extends Star{
 	
 	public void move(){
 		//—ÿ◊≈Õ÷‘≤πÏº£∑…––
-		x = center.x + center.width/2 + longAxis* Math.cos(degree);
-		y = center.y + center.height/2 + shortAxis* Math.sin(degree);
+		x = center.x + center.width/2 + longAxis* Math.cos(degree)-width/2;
+		y = center.y + center.height/2 + shortAxis* Math.sin(degree)-height/2;
 		degree += speed;
 	}
 	
@@ -51,6 +51,9 @@ public class Planet extends Star{
 		this.shortAxis = shortAxis;
 		this.speed = speed;
 		this.center = center;
+		this.img = Util.getImage(imgPath);
+		this.width = img.getWidth(null);
+		this.height = img.getHeight(null);
 	}
 
 	

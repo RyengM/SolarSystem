@@ -26,12 +26,9 @@ public class Star {
 	public Star(Image img,double x,double y){
 		this(img);
 		this.x = x;
-		this.y = y;
-		
-		
+		this.y = y;	
 	}
 
-	
 	public Star(String ImgPath, double x,double y){
 		this(Util.getImg(ImgPath),x,y);
 	}
