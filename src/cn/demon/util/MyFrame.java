@@ -8,13 +8,13 @@ import java.awt.event.WindowEvent;
 
 /*
 *
-* ´°¿ÚÀà
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 *
 */
 
 public class MyFrame extends Frame{
 	/*
-	 * ¼ÓÔØ½çÃæ
+	 * ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ï¿½
 	 */
     public void LunchFrame(){
         setSize(Constant.Width,Constant.Length);
@@ -51,7 +51,7 @@ public class MyFrame extends Frame{
 	private Graphics gBuffer;
 	
 	@Override
-	public void update(Graphics g){  //ÖØÔØupdate£¬½øÐÐË«»º³åÒÔ·ÀÖ¹ÉÁË¸
+	public void update(Graphics g){  //ï¿½ï¿½ï¿½ï¿½updateï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ï¿½ï¿½ï¿½Ô·ï¿½Ö¹ï¿½ï¿½Ë¸
 		if(iBuffer==null){  
 	        iBuffer=createImage(this.getSize().width,this.getSize().height);  
 	        gBuffer=iBuffer.getGraphics();  
@@ -63,6 +63,5 @@ public class MyFrame extends Frame{
 	    
 	    g.drawImage(iBuffer, 0, 0, null);
 	}  
-	
 	
 }
