@@ -13,11 +13,12 @@ import cn.demon.util.Util;
 public class SolarFrame extends MyFrame{
 	
 	Image bg = Util.getImg("img/background.jpg");
+	//Star sun = new Star("img/sun_.gif",Constant.Width/2,Constant.Length/2);
 	Star sun = new Star("img/sun.png",Constant.Width/2,Constant.Length/2,70);
 	Planet mercury = new Planet(sun, "img/mercury.png", 80, 40, 0.1,5);
 	Planet venus = new Planet(sun,"img/venus.png",100,50,0.04,1);
 	Planet earth = new Planet(sun,"img/earth.png",126,63,0.02,1);
-	Planet moon = new Planet(earth, "img/mercury.png", 16, 8, 0.06,1, true);
+	Planet moon = new Planet(earth, "img/mercury.png", 20, 12, 0.06,1, true);
 	Planet mars = new Planet(sun,"img/mars.png",156,78,0.01,2);
 	Planet jupiter = new Planet(sun,"img/jupiter.png",260,130,0.008,1);
 	Planet saturn = new Planet(sun,"img/saturn.png",300,150,0.005,1);

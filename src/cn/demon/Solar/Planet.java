@@ -44,7 +44,7 @@ public class Planet extends Star{
 	public void move(){
 		//—ÿ◊≈Õ÷‘≤πÏº£∑…––
 		x = center.x + center.width/2 + longAxis* Math.cos(degree)-width/2;
-		y = center.y + center.height/3 + shortAxis* Math.sin(degree)-height/2;
+		y = center.y + center.height/2.5 + shortAxis* Math.sin(degree)-height/2;
 		degree += speed;
 	}
 	
@@ -57,7 +57,7 @@ public class Planet extends Star{
 		this.longAxis = longAxis;
 		this.shortAxis = shortAxis;
 		this.speed = speed;
-		this.img = Util.getImage(imgPath);
+		this.img = Util.getImg(imgPath);
 		this.width = img.getWidth(null);
 		this.height = img.getHeight(null);
 	}
