@@ -1,6 +1,5 @@
 package cn.demon.util;
 
-import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -30,13 +29,12 @@ public class Util {
 		return Toolkit.getDefaultToolkit().getImage(MyFrame.class.getClassLoader().getResource(path));
 	}
 	
-	public void changeImgSize (Image img,int a){//Í¼Æ¬Ëõ·Å
-		Image image = img;
-		BufferedImage tag;
-		int height = img.getHeight(null);
-		int width = img.getWidth(null);
-		tag = new BufferedImage(width/a, height/a, BufferedImage.TYPE_INT_BGR);
-		tag.getGraphics().drawImage(image, 0, 0, width/a, height/a, null);
+	public static Image changeImgSize (Image img,int width){//Í¼Æ¬Ëõ·Å
+		Image scrImg = img;
+		int ImgWidth = width;
+		int height = scrImg.getHeight(null)*ImgWidth/scrImg.getWidth(null);
+		img = scrImg.getScaledInstance(ImgWidth, height, Image.SCALE_SMOOTH);
+		return img;
 	}
 	
 	
